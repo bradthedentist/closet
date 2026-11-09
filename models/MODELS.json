@@ -1,0 +1,19 @@
+{
+  "note": "Public model files only. No user data. SHA-256 pinned in js/ml/*.js and checked before use on the device.",
+  "selfHosted": [
+    { "path": "models/isnet-general-use-f16w-dyn.onnx", "bytes": 90297764, "sha256": "db502c3283b58ff1a457a133644818cfdedc3c75660cb102b4c0ac3ed3812ea1",
+      "license": "Apache-2.0", "upstream": "IS-Net / DIS 'isnet-general-use' (Xuebin Qin et al., https://github.com/xuebinqin/DIS, Apache-2.0)",
+      "derivedFrom": { "file": "isnet-general-use.onnx as distributed by rembg (https://github.com/danielgatis/rembg, MIT)", "md5": "fc16ebd8b0c10d971d3513d564d01e29", "sha256": "60920e99c45464f2ba57bee2ad08c919a52bbf852739e96947fbb4358c0d964a", "bytes": 178648008 },
+      "modifications": "Kept only the main output; made input height/width dynamic (upsample targets now taken from the skip tensor's shape instead of constants traced at 1024); stored weights as float16 with Cast-to-float32 nodes (compute stays fp32); removed unused nodes. Box check vs original fp32 at 1024 on 18 sample photos: mask IoU mean 1.000 (min 0.9998) at 1024; 0.975 (min 0.82) at 640." },
+    { "path": "models/u2netp.onnx", "bytes": 4574861, "sha256": "309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8",
+      "license": "Apache-2.0", "upstream": "U^2-Net small (u2netp), Xuebin Qin et al., https://github.com/xuebinqin/U-2-Net (Apache-2.0)",
+      "derivedFrom": { "file": "byte-identical to rembg's u2netp.onnx (md5 8e83ca70e441ab06c318d82300c84806); downloaded from https://huggingface.co/BritishWerewolf/U-2-Netp @ 7112208dbac3a3642496c8d54e2f0f9bb3dc1dc8 onnx/model.onnx (card license apache-2.0)" },
+      "use": "fallback only, if IS-Net cannot load on the device" },
+    { "path": "models/text-bank.f16.json", "bytes": 122700, "sha256": "f0b4ad1695bf73658ed382023abdef68d52255a0f540151dfd8b5e5e7e7180e0",
+      "license": "Apache-2.0 (derived from Marqo-FashionSigLIP text tower outputs)", "content": "58 prompt embeddings (float16) for the 7 clothing types + not-clothing, computed once with the pinned Marqo text model" }
+  ],
+  "remotePinned": [
+    { "url": "https://huggingface.co/Marqo/marqo-fashionSigLIP/resolve/c56244cc94f92419e8369fa71efdaf403b124ce8/onnx/vision_model_quantized.onnx", "bytes": 93973443, "sha256": "f1009cfce0eedd409f601e8351eedab72e8529641105eee6517821a9a634a2f4", "license": "Apache-2.0" },
+    { "url": "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0-dev.20250409-89f8206ba4/dist/ (ort.wasm.min.mjs, ort-wasm-simd-threaded.mjs, ort-wasm-simd-threaded.wasm)", "license": "MIT", "sha256": { "ort.wasm.min.mjs": "0cb5ac5be2c414d5b9e361f857108630c6d6e24a5ab9be3cf5f761de55289e94", "ort-wasm-simd-threaded.mjs": "43c25054b6b9ac000f786c65545ff83a45f871e0e310e8c2f4d48a363bb66db4", "ort-wasm-simd-threaded.wasm": "f061472c6e77d6d50d079aacdc0ff9b63fee287ddd2cbf46cf62438d3891de2b" } }
+  ]
+}

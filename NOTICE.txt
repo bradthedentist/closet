@@ -1,0 +1,18 @@
+Closet app - third-party notices
+
+Models (in /models, unmodified except as noted in models/MODELS.json):
+- IS-Net "isnet-general-use" - Copyright Xuebin Qin et al. (DIS, https://github.com/xuebinqin/DIS). Apache License 2.0
+  (licenses/APACHE-2.0.txt). Modified for this app: main output only, dynamic input size, float16-stored weights.
+  The ONNX export it was derived from is distributed by rembg (https://github.com/danielgatis/rembg, MIT).
+- U^2-Net-p - Copyright Xuebin Qin et al. (https://github.com/xuebinqin/U-2-Net). Apache License 2.0. Unmodified.
+- text-bank.f16.json - prompt embeddings computed with Marqo/marqo-fashionSigLIP (Apache License 2.0).
+
+Loaded at runtime from pinned URLs (SHA-256 checked, not stored in this repo):
+- Marqo/marqo-fashionSigLIP vision model (Apache License 2.0), Hugging Face, revision c56244cc94f92419e8369fa71efdaf403b124ce8.
+- ONNX Runtime Web 1.22.0-dev.20250409-89f8206ba4 (MIT License, Microsoft), jsDelivr.
+
+Fonts (in /fonts):
+- DM Sans - Copyright 2014 The DM Sans Project Authors. SIL Open Font License 1.1 (licenses/OFL-DMSans.txt).
+- Instrument Serif - Copyright 2022 The Instrument Serif Project Authors. SIL Open Font License 1.1 (licenses/OFL-InstrumentSerif.txt).
+
+This repository contains code only: no photos, no wardrobe data, no credentials.
