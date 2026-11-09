@@ -1,6 +1,6 @@
 // Service worker: caches the APP SHELL ONLY (same-origin code, styles, fonts, icons). It never touches Google API
 // traffic, photos, or the model files (those use the app's own SHA-verified Cache API cache; public files only).
-const VERSION = 'closet-shell-v1.0.0';
+const VERSION = 'closet-shell-v1.0.1';
 const SHELL = ['./', 'index.html', 'oauth.html', 'manifest.webmanifest', 'config.js', 'css/app.css',
   'js/app.js', 'js/ui.js', 'js/board.js', 'js/touchup.js', 'js/oauth-return.js',
   'js/core/policy.js', 'js/core/catalog.js', 'js/core/hash.js', 'js/core/drive.js', 'js/core/store.js', 'js/core/import-queue.js', 'js/core/auth.js', 'js/core/idb.js', 'js/core/mock-drive.js', 'js/core/geom.js',
